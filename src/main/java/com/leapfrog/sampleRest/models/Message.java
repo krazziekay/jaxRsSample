@@ -1,20 +1,29 @@
 package com.leapfrog.sampleRest.models;
 
-import java.sql.Date;
 
-/**
- * Created by kay on 4/3/17.
+import org.glassfish.jersey.server.JSONP;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Date;
+
+/*
+ Created by kay on 4/3/17.
  */
+
+
 public class Message {
     private int id;
     private String message;
     private Date created;
     private String author;
 
-    public Message(int id, String message, Date created, String author) {
+    public Message() {
+    }
+
+    public Message(int id, String message, String author) {
         this.id = id;
         this.message = message;
-        this.created = created;
+        this.created = new Date();
         this.author = author;
     }
 
